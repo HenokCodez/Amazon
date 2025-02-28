@@ -1,6 +1,6 @@
 .Lower_container {
   display: flex;
-  position: fixed;
+  position: relative;
   top: 60px;
   align-items: center;
   width: 100%;

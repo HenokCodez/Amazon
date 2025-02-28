@@ -1,12 +1,6 @@
 /* ====== Carousel Container ====== */
 .container {
-  padding-top: 103px;
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    padding-top: 170px;
-  }
+  padding-top: 60px;
 }
 
 /* ====== Fading Effect ====== */
@@ -24,6 +18,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .container {
+    padding-top: 120px;
+  }
   .hero__img::before {
     height: 100px;
   }
