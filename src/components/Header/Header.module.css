@@ -229,3 +229,40 @@
     right: -2px;
   }
 }
+
+/* Ensure links inside .account, .orders, and .cart are styled properly */
+.account a,
+.orders a,
+.cart a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* If using Link from React Router */
+.account a,
+.orders a,
+.cart a {
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Ensures the whole block is clickable */
+  align-items: center;
+}
+
+/* Hover effects for navigation links */
+.account a:hover,
+.orders a:hover,
+.cart a:hover {
+  text-decoration: none;
+}
+
+/* Fix for cart badge positioning */
+@media screen and (max-width: 600px) {
+  .cart span {
+    font-size: 12px;
+    top: -2px;
+    right: 2px;
+    min-width: 15px;
+    padding: 1px 4px;
+  }
+}

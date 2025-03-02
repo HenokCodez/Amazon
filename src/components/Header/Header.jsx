@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HeaderCss from "./Header.module.css";
 import { CiLocationOn } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
@@ -11,9 +12,9 @@ function Header() {
       <div className={HeaderCss.container}>
         {/* Left Section */}
         <div className={HeaderCss.left}>
-          <a href="/" className={HeaderCss.logo}>
+          <Link to="/" className={HeaderCss.logo}>
             <img src="https://pngimg.com/uploads/amazon/small/amazon_PNG11.png" alt="logo" />
-          </a>
+          </Link>
           <div className={HeaderCss.location}>
             <CiLocationOn className={HeaderCss.icon} />
             <div>
@@ -42,18 +43,21 @@ function Header() {
               <option value="EN">EN</option>
             </select>
           </div>
-          <div className={HeaderCss.account}>
+
+          <Link to="/sign-in" className={HeaderCss.account}>
             <p>Hello, Log in</p>
             <span>Account & Lists</span>
-          </div>
-          <div className={HeaderCss.orders}>
+          </Link>
+
+          <Link to="/orders" className={HeaderCss.orders}>
             <p>Returns</p>
             <span>& Orders</span>
-          </div>
-          <div className={HeaderCss.cart}>
+          </Link>
+
+          <Link to="/cart" className={HeaderCss.cart}>
             <FiShoppingCart />
             <span>0</span>
-          </div>
+          </Link>
         </div>
       </div>
 
