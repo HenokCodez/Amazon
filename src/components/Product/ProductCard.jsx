@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Rating from "@mui/material/Rating"; // Importing the Rating component from Material UI
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat"; // Importing my custom currency formatting component
 import classes from "./Product.module.css";
+import { Link } from "react-router-dom";
 
 // Functional component for rendering a single product card
 function ProductCard({ product }) {
@@ -10,9 +11,9 @@ function ProductCard({ product }) {
 
   return (
     <div className={classes.productCard__container}>
-      <a href={`/products/${id}`}>
+      <Link to={`/products/${id}`}>
         <img src={image} alt={title} className={classes.productCard__img__container} />
-      </a>
+      </Link>
 
       <div>
         <h3>{title}</h3>

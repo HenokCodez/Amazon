@@ -2,35 +2,37 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import classes from "./Product.module.css";
+import Loader from "../Loader/Loader";
 
-// Functional component to fetch and display a list of products
 function Product() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect hook to fetch products from the API when the component mounts
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {
         setProducts(res.data);
+        setIsLoading(false);
       })
       .catch((err) => {
-        console.log("error: ", err);
+        console.log("error: " + err);
+        setIsLoading(false);
       });
   }, [setProducts]);
 
   return (
     <>
-      <section className={classes.product__container}>
-        {products?.map((singleProduct) => {
-          return (
-            <ProductCard
-              key={singleProduct.id}
-              product={singleProduct} // Pass the product data as a prop to ProductCard
-            />
-          );
-        })}
-      </section>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <section className={classes.product__container}>
+          {products?.map((singleProduct) => (
+            <ProductCard renderAdd={true} key={singleProduct.id} product={singleProduct} sliceDesc={true} />
+          ))}
+        </section>
+      )}
     </>
   );
 }
