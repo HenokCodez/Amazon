@@ -5,8 +5,13 @@ import { CiLocationOn } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaSearch } from "react-icons/fa";
 import LowerHeader from "./LowerHeader";
+import { DataContext } from "../DataProvider/DataProvider";
+import { useContext } from "react";
 
 function Header() {
+  const [{ basket }, dispatch] = useContext(DataContext);
+  // Calculate total items in the basket (cart) using reduce
+  const totalItem = basket?.reduce((amount, item) => item.amount + amount, 0);
   return (
     <>
       <div className={HeaderCss.container}>
@@ -56,7 +61,7 @@ function Header() {
 
           <Link to="/cart" className={HeaderCss.cart}>
             <FiShoppingCart />
-            <span>0</span>
+            <span>{totalItem}</span>
           </Link>
         </div>
       </div>
