@@ -5,8 +5,14 @@ import { CiLocationOn } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaSearch } from "react-icons/fa";
 import LowerHeader from "./LowerHeader";
+import { DataContext } from "../DataProvider/DataProvider";
+import { useContext } from "react";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
+  const [{ basket, user }, dispatch] = useContext(DataContext);
+  // Calculate total items in the basket (cart) using reduce
+  const totalItem = basket?.reduce((amount, item) => item.amount + amount, 0);
   return (
     <>
       <div className={HeaderCss.container}>
@@ -44,9 +50,21 @@ function Header() {
             </select>
           </div>
 
-          <Link to="/sign-in" className={HeaderCss.account}>
-            <p>Hello, Log in</p>
-            <span>Account & Lists</span>
+          {/* Sign In / Sign Out */}
+          <Link to={!user ? "/auth" : null}>
+            <div>
+              {user ? ( // If the user is signed in
+                <>
+                  <p>Hello, {user?.email?.split("@")[0]}</p> {/* split returns an array example if email = abebe@gmail.com then email.split(@) returns ["abebe","gmail.com"] */}
+                  <span onClick={() => auth.signOut()}>Sign out</span>
+                </>
+              ) : (
+                <>
+                  <p>Hello, Sign In</p> {/* If no user, show Sign In */}
+                  <span>Account & Lists</span>
+                </>
+              )}
+            </div>
           </Link>
 
           <Link to="/orders" className={HeaderCss.orders}>
@@ -56,7 +74,7 @@ function Header() {
 
           <Link to="/cart" className={HeaderCss.cart}>
             <FiShoppingCart />
-            <span>0</span>
+            <span>{totalItem}</span>
           </Link>
         </div>
       </div>

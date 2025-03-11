@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
-import LayOut from "../../components/Layout/Layout";
+import Layout from "../../components/LayOut/LayOut";
 import ProductCard from "../../components/Product/ProductCard";
 import Loader from "../../components/Loader/Loader";
 import classes from "./Results.module.css";
@@ -30,7 +30,7 @@ function Results() {
   }, [categoryName]);
 
   return (
-    <LayOut>
+    <Layout>
       <section>
         <h1 style={{ padding: "30px" }}>Results</h1>
         <p style={{ padding: "30px" }}>Category / {categoryName}</p>
@@ -41,12 +41,12 @@ function Results() {
         ) : (
           <div className={classes.products_container}>
             {results?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} renderDesc={false} renderAdd={true} />
             ))}
           </div>
         )}
       </section>
-    </LayOut>
+    </Layout>
   );
 }
 

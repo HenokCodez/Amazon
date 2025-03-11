@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { productUrl } from "../../Api/endPoints";
-import LayOut from "../../components/Layout/Layout";
+import Layout from "../../components/LayOut/LayOut";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/Product/ProductCard";
 import Loader from "../../components/Loader/Loader";
@@ -25,7 +25,7 @@ function ProductDetail() {
       });
   }, [productId]);
 
-  return <LayOut>{isLoading ? <Loader /> : <ProductCard key={product.id} titleUp={true} product={product} flex={true} add_description={true} add_button={true} renderAdd={true} />}</LayOut>;
+  return <Layout>{isLoading ? <Loader /> : <ProductCard key={product.id} titleUp={true} product={product} flex={true} renderDesc={true} add_button={true} renderAdd={true} />}</Layout>;
 }
 
 export default ProductDetail;
