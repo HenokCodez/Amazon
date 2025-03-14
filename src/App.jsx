@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Router from "./Router";
+import Router from "./Router.jsx";
 import { auth } from "./Utility/firebase.js"; // Importing Firebase authentication instance
 import { Type } from "./Utility/action.type.js"; // Importing action types for the reducer
 import { useContext, useEffect } from "react";

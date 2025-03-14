@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Payment from "./pages/Payment/Payment";
 import Orders from "./pages/Orders/Orders";
-import Cart from "./Pages/Cart/Cart";
+import Cart from "./pages/Cart/Cart.jsx";
 import Results from "./pages/Results/Results";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Auth from "./pages/Auth/Auth";
