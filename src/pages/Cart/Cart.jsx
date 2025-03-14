@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import LayOut from "../../components/LayOut/LayOut";
+import LayOut from "../../components/Layout/Layout"
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import ProductCard from "../../components/Product/ProductCard";
 import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
@@ -78,7 +78,7 @@ function Cart() {
               <small>This order contains a gift</small>
             </span>
 
-            <Link to="/payments">Continue to checkout</Link>
+            <Link to="/payment">Continue to checkout</Link>
           </div>
         )}
       </section>

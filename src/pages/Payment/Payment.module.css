@@ -1,0 +1,184 @@
+/* .payment__header {
+  padding: 20px;
+  font-size: 24px;
+  background-color: rgb(234, 237, 237);
+}
+
+.payment__method__wrapper {
+  padding: 30px;
+}
+
+.payment__flex {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.payment__flex h3 {
+  min-width: 300px;
+}
+
+.payment__deliveryItem img {
+  width: 80px !important;
+}
+
+.payment__deliveryItem div {
+  height: auto !important;
+}
+
+.payment__card_methods {
+  max-width: 350px;
+  width: 100%;
+}
+
+.payment__card_error {
+  color: #ff0000;
+}
+
+.payment__card_details {
+  font-size: 18px;
+}
+
+.payment__price {
+  padding: 20px;
+}
+
+.payment__price span {
+  display: flex;
+  font-size: 16px;
+  gap: 10px;
+}
+.payment__price button {
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.payment__price button:hover {
+  background-color: var(--primary-shade);
+}
+
+.payment__card_details_loader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: rgb(52, 52, 52);
+}
+
+@media screen and (max-width: 768px) {
+  .payment__flex {
+    flex-direction: column;
+  }
+} */
+
+/* Base styles */
+* {
+  box-sizing: border-box; /* Ensures padding and borders are included in element's width/height */
+}
+
+.payment__header {
+  padding: 1.25rem; /* Using rem for better responsiveness */
+  font-size: 1.5rem; /* Font size scaled using rem */
+  background-color: rgb(234, 237, 237);
+}
+
+.payment__method__wrapper {
+  padding: 1.875rem; /* Using rem for padding */
+}
+
+.payment__flex {
+  display: flex;
+  gap: 1.25rem; /* Using rem for spacing between flex items */
+  padding: 1.875rem; /* Padding using rem for consistency */
+}
+
+.payment__flex h3 {
+  min-width: 18.75rem; /* Using rem for a more scalable approach */
+}
+
+.payment__deliveryItem img {
+  width: 5rem !important; /* Using rem for image size */
+}
+
+.payment__deliveryItem div {
+  height: auto !important;
+}
+
+.payment__card_methods {
+  max-width: 21.875rem; /* max-width in rem */
+  width: 100%;
+}
+
+.payment__card_error {
+  color: #ff0000;
+  font-size: 1rem; /* Improved font size for card error */
+}
+
+.payment__card_details {
+  font-size: 1.125rem; /* Font size using rem */
+}
+
+.payment__price {
+  padding: 1.25rem; /* Padding in rem */
+}
+
+.payment__price span {
+  display: flex;
+  font-size: 1rem; /* Scalable font size */
+  gap: 0.625rem; /* Spacing between elements */
+}
+
+.payment__price button {
+  margin-top: 1rem; /* Top margin in rem */
+  width: 100%;
+  border: none;
+  background-color: rgb(250, 113, 63);
+  border-radius: 0.3125rem; /* Border radius using rem */
+  padding: 0.5rem 0.625rem; /* Padding using rem */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.payment__price button:hover {
+  background-color: rgb(240, 93, 40);
+}
+
+.payment__card_details_loader {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  justify-content: center;
+  color: rgb(52, 52, 52);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .payment__flex {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .payment__header {
+    font-size: 1.25rem; /* Smaller font for mobile */
+    padding: 1rem; /* Reduced padding for mobile */
+  }
+
+  .payment__flex h3 {
+    min-width: 0; /* Remove min-width on smaller screens */
+  }
+
+  .payment__price span {
+    font-size: 0.875rem; /* Smaller font size for mobile */
+  }
+
+  .payment__card_methods {
+    max-width: 100%; /* Allow card methods to take full width on small screens */
+  }
+
+  .payment__price button {
+    padding: 0.625rem 1rem; /* Adjust padding for mobile */
+  }
+}
