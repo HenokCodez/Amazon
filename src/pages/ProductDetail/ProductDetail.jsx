@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { productUrl } from "../../Api/endPoints";
-import Layout from "../../components/LayOut/LayOut";
+import Layout from "../../components/Layout/Layout";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/Product/ProductCard";
 import Loader from "../../components/Loader/Loader";

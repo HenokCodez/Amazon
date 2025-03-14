@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Landing from "./Pages/Landing/Landing";
+import Landing from "./pages/Landing/Landing";
 import Payment from "./pages/Payment/Payment";
 import Orders from "./Pages/Orders/Orders";
 import Cart from "./Pages/Cart/Cart";
