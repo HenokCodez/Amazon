@@ -1,0 +1,78 @@
+.orders {
+  background-color: #efeeee;
+  padding: 20px;
+  min-height: 100vh; /* Ensures full-page coverage */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.orders__container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for better contrast */
+  max-width: 800px; /* Restricts width for better readability */
+  width: 100%;
+}
+
+.orders__container h2 {
+  border-bottom: 2px solid var(--primary-shade);
+  /* padding-bottom: 10px;
+  margin-bottom: 20px; */
+  font-size: 1.5rem;
+  color: var(--primary-color); /* Ensures contrast */
+}
+
+.orders__container p {
+  padding: 12px;
+  font-size: 1rem;
+  color: #333; /* Darker text for better readability */
+}
+
+.orders__container img {
+  width: 100px;
+  object-fit: cover; /* Ensures images maintain aspect ratio */
+  border-radius: 5px;
+}
+
+.orders__container div {
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Light background for separation */
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: flex-start;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .orders {
+    padding: 20px;
+    margin-top: 120px;
+  }
+
+  .orders__container {
+    padding: 15px;
+    max-width: 95%; /* Makes it fit smaller screens */
+  }
+
+  .orders__container h2 {
+    font-size: 1.2rem; /* Reduce heading size */
+    text-align: center;
+  }
+
+  .orders__container p {
+    font-size: 0.9rem; /* Reduce text size */
+    text-align: center;
+  }
+
+  .orders__container img {
+    width: 80px; /* Reduce image size */
+  }
+
+  .orders__container div {
+    padding: 8px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import LayOut from "../../components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import classes from "./Payment.module.css";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import ProductCard from "../../components/Product/ProductCard";
@@ -71,7 +71,7 @@ function Payment() {
   };
 
   return (
-    <LayOut>
+    <Layout>
       <div className={classes.payment__header}>Checkout ({totalItem}) items</div>
 
       <section className={classes.payment__method__wrapper}>
@@ -124,7 +124,7 @@ function Payment() {
           </div>
         </div>
       </section>
-    </LayOut>
+    </Layout>
   );
 }
 
